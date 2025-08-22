@@ -3,163 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C7 Security - Advanced Threat Protection</title>
-    <style>
-        :root {
-            --primary: #2563eb; /* A strong, trustworthy blue */
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --accent: #f59e0b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background: var(--dark);
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent);
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 2rem;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(to right, var(--dark), #2d3748);
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--accent);
-            color: var(--dark);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #e69c09;
-            transform: translateY(-3px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--dark);
-            color: white;
-        }
-    </style>
+    <title>C7 Security - Professional Security Solutions</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">C7 Security</div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">C7Security</div>
             <div class="nav-links">
+                <a href="#home">Home</a>
                 <a href="#services">Services</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <section class="hero" id="home">
-        <h1>Protecting Your Digital Future</h1>
-        <p>Advanced cybersecurity solutions for businesses and individuals. Proactive threat hunting, penetration testing, and 24/7 monitoring.</p>
-        <a href="#contact" class="btn">Get a Free Security Audit</a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Advanced Cybersecurity Solutions</h1>
+            <p>Protecting your digital assets with cutting-edge security technology</p>
+            <button class="cta-button" onclick="scrollToSection('contact')">Get Started</button>
+        </div>
     </section>
 
-    <div class="container">
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="services">
-                <div class="service-card">
-                    <h3>Vulnerability Assessment</h3>
-                    <p>We identify weaknesses in your systems before attackers can exploit them.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Incident Response</h3>
-                    <p>Our team is on standby to quickly contain and eradicate threats.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Security Training</h3>
-                    <p>Empower your employees to become your first line of defense.</p>
-                </div>
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Penetration Testing</h3>
+                <p>Comprehensive security assessments to identify vulnerabilities.</p>
             </div>
-        </section>
-        <!-- Add About and Contact sections here later -->
-    </div>
+            <div class="service-card">
+                <h3>Network Security</h3>
+                <p>Advanced protection for your network infrastructure.</p>
+            </div>
+            <div class="service-card">
+                <h3>Incident Response</h3>
+                <p>24/7 monitoring and rapid response to security incidents.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="responseMessage" class="response-message"></div>
+    </section>
 
     <footer>
+        <p>&copy; 2024 C7 Security. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
         <p>© 2024 C7 Security. All rights reserved.</p>
     </footer>
 </body>
