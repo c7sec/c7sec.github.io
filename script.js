@@ -6,6 +6,20 @@ function scrollToSection(sectionId) {
 
 document.getElementById('contactForm').addEventListener('submit', async function(event) {
     event.preventDefault();
+    // Add this middleware to your server.js
+app.use((req, res, next) => {
+  const auth = { login: 'admin', password: 'your_secure_password' } // Change these
+  
+  const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
+  const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':')
+  
+  if (login && password && login === auth.login && password === auth.password) {
+    return next()
+  }
+  
+  res.set('WWW-Authenticate', 'Basic realm="401"')
+  res.status(401).send('Authentication required.')
+})
     
     const formData = {
         name: document.getElementById('name').value,
